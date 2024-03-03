@@ -2,8 +2,8 @@
   <h3 class="text-light text-center">GifsApp</h3>
   <hr class="text-light">
 
-  <div class="list-group list-reset">
-    <button class="list-group-item list-group-item-action">Valorant</button>
+  <div class="list-group list-reset mb-4" *ngFor="let tags of gifsTags">
+    <button class="list-group-item list-group-item-action">{{ tags | titlecase }}</button>
   </div>
 
 </div>
