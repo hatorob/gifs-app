@@ -18,8 +18,6 @@ export class GifsService {
   constructor( private http: HttpClient ) {
     //! Cargamos del localStorage
     this.loadLocalStorage();
-    //! Cargamos los gifs del primer elemento
-    if(this._tagsHistory.length > 1) this.searchTag(this._tagsHistory[0]);
   }
 
   get tagsHistory() {
@@ -90,6 +88,9 @@ export class GifsService {
 
     if(!localStorage.getItem('history')) return;
     this._tagsHistory = JSON.parse( localStorage.getItem('history')! );
+     //! Cargamos los gifs del primer elemento
+     if(this._tagsHistory.length === 0) return;
+     this.searchTag(this._tagsHistory[0]);
 
   }
 
