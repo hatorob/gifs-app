@@ -3,7 +3,10 @@
   <hr class="text-light">
 
   <div class="list-group list-reset mb-2" *ngFor="let tags of gifsTags">
-    <button class="list-group-item list-group-item-action">{{ tags | titlecase }}</button>
+    <button
+      class="list-group-item list-group-item-action"
+      (click)="searchTag(tags)"
+    >{{ tags | titlecase }}</button>
   </div>
 
 </div>

@@ -3,7 +3,11 @@
   <div *ngFor="let gif of gifsList" class="col-md-3 col-sm-6 mt-4">
 
     <div class="text-center card bg-dark mb-2">
-      <!-- TODO: Crear imagen -->
+
+      <img [src]="gif.images.downsized_medium.url" [alt]="gif.title"
+           class="card-img-top"
+      >
+
       <div class="card-body text-light">
         <p class="card-text"> {{ gif.title }} </p>
       </div>

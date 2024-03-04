@@ -12,8 +12,14 @@ export class SidebarComponent {
 
   }
 
-  public get gifsTags() {
+  public get gifsTags(): string[] {
     return [...this.gifsServices.tagsHistory];
+  }
+
+  //!Si doy click en el boton de los tags, vuelvo a realizar la petición
+  public searchTag = ( tag: string ) => {
+    //console.log("doy click desde el sidebar", tag);
+    this.gifsServices.searchTag(tag);
   }
 
 
